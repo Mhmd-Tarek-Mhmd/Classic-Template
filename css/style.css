@@ -349,6 +349,7 @@ nav ul.nav li.active a {
   .team .images {
     gap: 10px;
     display: grid;
+    grid-template-rows: 170px;
     grid-template-columns: repeat(2, 170px);
   }
 }
