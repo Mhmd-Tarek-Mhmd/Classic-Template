@@ -26,7 +26,7 @@ a {
   text-decoration: none;
 }
 img {
-  height: auto;
+  height: 100%;
   max-width: 100%;
 }
 button {
@@ -410,4 +410,50 @@ nav ul.nav li.active a {
 }
 .team p {
   margin: 0;
+}
+
+/*
+  End Team Section
+
+  Start Testimonials Section
+*/
+
+.testimonials {
+  min-height: 394px;
+  background: url(../images/testimionals.png) no-repeat center 80%;
+}
+.testimonials,
+.testimonials .container {
+  position: relative;
+}
+.testimonials h2.section-title {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 72px;
+}
+.testimonials h2.section-title::before {
+  left: 50%;
+  background-color: #fff;
+  transform: translateX(-50%);
+}
+.testimonials q {
+  display: block;
+  font-size: 22px;
+  font-weight: 300;
+  color: #e8e8e8;
+  margin-bottom: 60px;
+}
+@media (min-width: 1200px) {
+  .testimonials q {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.testimonials q::before,
+.testimonials q::after {
+  color: var(--main-color);
+}
+.testimonials span {
+  color: var(--main-color);
 }
