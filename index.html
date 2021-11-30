@@ -218,6 +218,82 @@
           <span>Ashley Cady</span>
         </div>
       </section>
+
+      <!--
+        Portfolio Section
+      -->
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <h2 class="section-title text-sm-center">Projects</h2>
+
+          <!-- [1] Controls -->
+          <div class="controls center-flex">
+            <button class="btn active">All</button>
+            <button class="btn" data-control="mobile">Mobile</button>
+            <button class="btn" data-control="coffee">Coffee</button>
+            <button class="btn" data-control="video">Video</button>
+            <button class="btn" data-control="fashion">Fashion</button>
+          </div>
+
+          <!-- [2] Gallery -->
+          <div class="gallery">
+            <div data-filter="mobile" data-likes="14">
+              <img
+                src="images/projects/1.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+            <div data-filter="coffee" data-likes="14">
+              <img
+                src="images/projects/2.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+            <div data-filter="video" data-likes="14">
+              <img
+                src="images/projects/3.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+            <div data-filter="fashion" data-likes="14">
+              <img
+                src="images/projects/4.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+            <div data-filter="coffee" data-likes="14">
+              <img
+                src="images/projects/5.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+            <div data-filter="video" data-likes="14">
+              <img
+                src="images/projects/6.png"
+                alt=""
+                width="370"
+                height="215"
+              />
+              <a href="#" class="btn">View More</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 
@@ -226,6 +302,28 @@
     /* Nav Logic */
     $("nav .mobile-btn").on("click", function () {
       $("ul.nav").slideToggle();
+    });
+
+    /* Portfolio Logic */
+    $("#portfolio .controls button").on("click", function () {
+      const dataControl = $(this).data("control"),
+        galleryImages = $("#portfolio .gallery > div");
+
+      // Add active class
+      $(this).addClass("active").siblings().removeClass("active");
+
+      // Show the filtered images
+      if ($(this).data("control")) {
+        galleryImages.fadeOut(300);
+
+        galleryImages.each(function () {
+          setTimeout(() => {
+            $(this).data("filter") === dataControl && $(this).fadeIn();
+          }, 300);
+        });
+      } else {
+        galleryImages.fadeIn();
+      }
     });
   </script>
 </html>
