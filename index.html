@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="crossorigin"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&amp;family=Roboto&amp;display=swap"
+    />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--
+      Home Section
+    -->
+    <div class="home" id="home">
+      <div class="overlay"></div>
+      <!-- [1] Header area -->
+      <nav>
+        <div class="container space-between-flex">
+          <a href="/">
+            <img
+              src="images/logo.png"
+              alt="Classic logo"
+              width="135"
+              height="23"
+            />
+          </a>
+
+          <button class="mobile-btn" aria-label="Nav toggler">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- [2] Slider area -->
+      <div class="slider center-flex text-center">
+        <div class="container">
+          <div class="text">
+            <h1>Welcome to the <span>Classic</span></h1>
+            <p>
+              Mauris non sapien eget dolor ultricies auctor eget non est. Donec
+              sed ligula ipsum. Aliquam dignissim hendrerit velit.
+            </p>
+            <a href="#" aria-label="Next slide">
+              <i class="fa fa-chevron-right fa-2x pull-right"></i>
+            </a>
+            <a href="#" aria-label="Previous slide">
+              <i class="fa fa-chevron-left fa-2x pull-left"></i>
+            </a>
+          </div>
+        </div>
+        <button class="btn">Read More</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="jquery.min.js"></script>
+  <script>
+    /* Nav Logic */
+    $("nav .mobile-btn").on("click", function () {
+      $("ul.nav").slideToggle();
+    });
+  </script>
+</html>
