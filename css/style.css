@@ -16,6 +16,9 @@ body {
 section {
   padding: var(--section-padding);
 }
+p {
+  margin: 0;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -155,6 +158,7 @@ button {
 .home {
   height: 100vh;
   color: #e8e8e8;
+  min-height: 500px;
   position: relative;
 }
 
@@ -166,8 +170,10 @@ nav {
   width: 100%;
   min-height: 30px;
 }
+nav .container {
+  position: relative;
+}
 nav .mobile-btn {
-  width: 30px;
   display: none;
   cursor: pointer;
 }
@@ -175,15 +181,6 @@ nav .mobile-btn {
   nav .mobile-btn {
     display: block;
   }
-}
-nav .mobile-btn span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-}
-nav .mobile-btn span:nth-child(2) {
-  margin: 5px 0;
 }
 
 nav ul.nav {
@@ -215,8 +212,9 @@ nav ul.nav li.active a {
     z-index: 1;
     background-color: var(--black);
   }
-  nav ul.nav li {
+  nav ul.nav a {
     padding: 10px;
+    display: block;
   }
   nav ul.nav a:hover,
   nav ul.nav a:focus-visible,
@@ -224,9 +222,6 @@ nav ul.nav li.active a {
     color: #fff;
     border-bottom: none;
     background-color: var(--main-color);
-  }
-  nav ul.nav li a {
-    display: block;
   }
 }
 
@@ -284,48 +279,50 @@ nav ul.nav li.active a {
   background-color: #d5d5d5;
 }
 
-.services-content {
+.services .services-content {
   gap: 40px;
   display: grid;
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .services-content {
+  .services .services-content {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .services .space-between-flex {
+    align-items: flex-start;
   }
 }
 @media (min-width: 992px) {
-  .services-content {
+  .services .services-content {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.space-between-flex {
-  align-items: flex-start;
+@media (min-width: 576px) {
+  .services .service .text {
+    width: 75%;
+  }
 }
 @media (max-width: 767px) {
-  .space-between-flex {
+  .services .space-between-flex {
     flex-direction: column;
+  }
+  .services .service i {
+    margin-bottom: 10px;
   }
 }
 
-.service i {
+.services .service i {
   width: 20%;
   max-width: 70px;
   text-align: center;
   color: var(--main-color);
 }
-.service .text {
-  width: 75%;
-}
-.service .text h3 {
+.services .service .text h3 {
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 24px;
   color: var(--black);
-}
-.service .text p {
-  margin: 0;
 }
 
 /*
@@ -408,8 +405,11 @@ nav ul.nav li.active a {
 .team .image:hover::after {
   display: flex;
 }
-.team p {
-  margin: 0;
+@media (min-width: 992px) and (max-width: 1199px) {
+  .team .image::after {
+    top: 90px;
+    left: 25px;
+  }
 }
 
 /*
@@ -426,12 +426,12 @@ nav ul.nav li.active a {
 .testimonials .container {
   position: relative;
 }
-.testimonials h2.section-title {
+.testimonials .section-title {
   color: #fff;
   font-size: 32px;
   margin-bottom: 72px;
 }
-.testimonials h2.section-title::before {
+.testimonials .section-title::before {
   left: 50%;
   background-color: #fff;
   transform: translateX(-50%);
@@ -584,9 +584,6 @@ footer .footer-content {
 /* [1] About */
 footer .about .social {
   margin-top: 40px;
-}
-footer .about p {
-  margin: 0;
 }
 footer .about .social {
   gap: 10px;
