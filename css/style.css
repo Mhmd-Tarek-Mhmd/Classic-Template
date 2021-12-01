@@ -545,3 +545,157 @@ nav ul.nav li.active a {
   color: #fffefe;
   display: none;
 }
+
+/*
+  End Portfolio Section
+
+  Footer area
+*/
+
+footer {
+  font-size: 13px;
+  min-height: 400px;
+  background-color: #232323;
+  padding: var(--section-padding);
+  padding-bottom: 37px;
+}
+footer .title {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 33px;
+}
+footer .footer-content {
+  gap: 70px;
+  display: grid;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  footer .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  footer .footer-content {
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* [1] About */
+footer .about .social {
+  margin-top: 40px;
+}
+footer .about p {
+  margin: 0;
+}
+footer .about .social {
+  gap: 10px;
+  display: flex;
+  margin-top: 42px;
+}
+@media (max-width: 767px) {
+  footer .about p {
+    width: 80%;
+    margin: auto;
+  }
+  footer .about .social {
+    justify-content: center;
+  }
+}
+@media (max-width: 991px) {
+  footer .about .social {
+    margin-top: 22px;
+  }
+}
+footer .about .social a {
+  width: 37px;
+  height: 37px;
+  display: block;
+  border: 1px solid;
+  line-height: 35px;
+  text-align: center;
+  transition: background-color 0.3s;
+  will-change: background-color, color;
+}
+footer .about .social a:hover,
+footer .about .social a:focus-visible {
+  color: #fff;
+}
+footer .about .social a:first-of-type:hover,
+footer .about .social a:first-of-type:focus-visible {
+  background-color: #3b5998;
+}
+footer .about .social a:nth-of-type(2):hover,
+footer .about .social a:nth-of-type(2):focus-visible {
+  background-color: #db4437;
+}
+footer .about .social a:last-of-type:hover,
+footer .about .social a:last-of-type:focus-visible {
+  background-color: #1da1f2;
+}
+
+/* [2] Tags */
+footer .tags span {
+  margin: 5px;
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-block;
+  text-transform: uppercase;
+  border-color: var(--text-color);
+}
+
+/* [3] Posts */
+@media (min-width: 992px) {
+  footer .posts {
+    min-width: 235px;
+  }
+}
+footer .posts .post {
+  gap: 15px;
+  display: flex;
+  margin-bottom: 10px;
+}
+footer .posts .post h6 {
+  color: #fff;
+  margin: 0 0 12px;
+  font-weight: 400;
+  font-size: inherit;
+}
+@media (max-width: 767px) {
+  footer .posts .post {
+    display: block;
+    margin-bottom: 0;
+  }
+  footer .posts .post:nth-of-type(even) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  footer .posts .post h6 {
+    margin: 10px 0 5px;
+  }
+}
+
+/* [4] Blog */
+footer .blog a {
+  color: #fff;
+  display: block;
+  padding: 15px 0;
+  border-bottom: 2px solid #575757;
+}
+footer .blog a:hover,
+footer .blog a:focus-visible {
+  text-decoration: underline;
+}
+footer .blog a:first-of-type {
+  padding: 0 0 15px;
+}
+
+/* [5] Copyrights */
+footer .copyrights {
+  margin-top: 50px;
+}
+@media (max-width: 767px) {
+  footer .copyrights {
+    text-align: center;
+  }
+}
